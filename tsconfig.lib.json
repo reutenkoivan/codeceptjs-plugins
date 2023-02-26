@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "allowJs": true,
+    "strict": false,
+    "types": [
+      "node",
+      "codeceptjs"
+    ]
+  },
+  "exclude": [
+    "**/__tests__/**",
+  ]
+}

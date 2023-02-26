@@ -1,0 +1,23 @@
+{
+  "name": "@codeceptjs-plugins/html-snapshot-on-fail",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Ivan Reutenko",
+  "files": [
+    "lib",
+    "doc"
+  ],
+  "main": "lib/index",
+  "dependencies": {
+    "@codeceptjs-plugins/base": "^0.0.1",
+    "humanize-hash-long-str": "^1.4.0"
+  },
+  "peerDependencies": {
+    "codeceptjs": "^3.4.1"
+  },
+  "homepage": "https://reutenkoivan.github.io/codeceptjs-plugins/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reutenkoivan/codeceptjs-plugins.git"
+  }
+}
