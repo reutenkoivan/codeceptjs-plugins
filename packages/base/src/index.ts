@@ -1,5 +1,5 @@
-export * from './utils/testDataAggregator'
-export * from './utils/logger'
 export * from './basePlugin'
+export * from './registerPlugin'
+export * from './logger'
 
-export * from './types'
+export * from './codeceptjsTypes'

@@ -5,7 +5,8 @@ export declare namespace HTMLOnFailPlugin {
     dirname?: string;
     rootDir?: string;
     uniqNames?: boolean;
-    wrightFile?: boolean;
+    writeFile?: boolean;
+    reporter?: string;
   }
 
   export type config = {
@@ -15,11 +16,12 @@ export declare namespace HTMLOnFailPlugin {
     rootDir: string;
     dirpath: string;
     uniqNames: boolean;
-    wrightFile: boolean;
+    writeFile: boolean;
+    reporter?: string;
   }
 
   export type bus = {
     driver: any;
-    reporter: any;
+    reporter?: Record<string & 'addAttachment', any>;
   }
 }

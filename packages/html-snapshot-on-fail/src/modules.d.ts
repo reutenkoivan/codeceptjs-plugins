@@ -6,5 +6,5 @@ declare module 'humanize-hash-long-str' {
     length?: number;
   }
 
-  export const humanizeHashLongStr = (_str: string, _options: opts) => string
+  export function humanizeHashLongStr (_str: string, _options: opts): string
 }

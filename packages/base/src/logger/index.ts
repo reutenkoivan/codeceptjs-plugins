@@ -2,12 +2,15 @@
 
 import chalk from 'chalk'
 import { output } from 'codeceptjs'
+import { LoggerOptions, LoggerProcessor } from './types'
 
 export class Logger {
-  namespace: string
+  protected readonly namespace: string
+  protected readonly loggerProcessor: LoggerProcessor
 
-  constructor(namespace: string) {
+  constructor({ namespace, loggerProcessor }: LoggerOptions) {
     this.namespace = namespace
+    this.loggerProcessor = loggerProcessor || output
   }
 
   static version(namespace: string, version: string): void {
@@ -38,20 +41,20 @@ export class Logger {
 
   debug(msg: string, data?: any): void {
     for (const row of this.format(msg, data)) {
-      output.plugin(this.namespace, row)
+      this.loggerProcessor.plugin(this.namespace, row)
     }
   }
 
   say(msg: string, data?: any): void {
     for (const row of this.format(msg, data)) {
-      output.say(`[ ${this.namespace} ] ${row}`, 'magenta')
+      this.loggerProcessor.say(`[ ${this.namespace} ] ${row}`, 'magenta')
     }
   }
 
   error(error: string | Error): void {
     if (typeof error === 'string') {
       for (const row of this.format(error)) {
-        output.error(`[ ${this.namespace} ] ${row}`)
+        this.loggerProcessor.error(`[ ${this.namespace} ] ${row}`)
       }
 
       return
@@ -59,20 +62,14 @@ export class Logger {
 
     if (error.stack) {
       for (const row of this.format(error.stack)) {
-        output.error(`[ ${this.namespace} ] ${row}`)
+        this.loggerProcessor.error(`[ ${this.namespace} ] ${row}`)
       }
 
       return
     }
 
     for (const row of this.format(error.message)) {
-      output.error(`[ ${this.namespace} ] ${row}`)
+      this.loggerProcessor.error(`[ ${this.namespace} ] ${row}`)
     }
-  }
-
-  exitEarly(error: string | Error, exitCode: number = 1): void {
-    this.error(error)
-
-    process.exit(exitCode)
   }
 }

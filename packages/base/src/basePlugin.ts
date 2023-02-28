@@ -1,13 +1,14 @@
-import { Logger } from './utils/logger'
-import { BaseEvents } from './types'
+import { Logger } from './logger'
+import { BaseEvents } from './codeceptjsTypes'
+import { BasePluginOptions } from './types'
 
 export abstract class BasePlugin {
   config: any
   logger: Logger
 
-  constructor(config: Record<string, any>, namespace: string) {
+  constructor(config: Record<string, any>,  { namespace, loggerProcessor }: BasePluginOptions) {
     this.config = config
-    this.logger = new Logger(namespace)
+    this.logger = new Logger({ namespace, loggerProcessor })
   }
 
   startedHook(): void {}

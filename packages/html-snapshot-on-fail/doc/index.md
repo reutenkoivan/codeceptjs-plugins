@@ -23,11 +23,12 @@ exports.config = {
   plugins: {
     htmlSnapshotOnFail: {
       require: "@codeceptjs-plugins/html-snapshot-on-fail",
-      enabled: false,
-      dirname: 'html-snapshots-on-fail',
-      rootDir: global.output_dir,
-      uniqNames: false,
-      writeFile: true,
+      enabled: false,                                       // default: false
+      dirname: 'html-snapshots-on-fail',                    // default: 'html-snapshots-on-fail'
+      rootDir: global.output_dir,                           // default: global.output_dir
+      uniqNames: false,                                     // default: false
+      writeFile: true,                                      // default: true
+      reporter: 'allure'                                    // default: undefined
     }
   }
 }

@@ -1,5 +1,7 @@
 import { humanizeHashLongStr } from 'humanize-hash-long-str'
 
+const SMALLEST_FILE_NAME_LENGTH = 220
+
 const replaceMap = {
   ' ': '_',
   '.': '_',
@@ -40,5 +42,5 @@ export const getFileName = (dirpath: string, base: string, postfix: string): str
     fileName += postfix
   }
 
-  return humanizeHashLongStr(fileName, { maxLength: 220 - dirpath.length - postfix.length })
+  return humanizeHashLongStr(fileName, { maxLength: SMALLEST_FILE_NAME_LENGTH - dirpath.length - postfix.length })
 }

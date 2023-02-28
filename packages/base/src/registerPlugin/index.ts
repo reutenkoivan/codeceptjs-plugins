@@ -1,12 +1,12 @@
 import { event } from 'codeceptjs'
 
 import type { BasePlugin } from '../basePlugin'
-import { DispatcherEmit } from '../types'
+import { DispatcherEmit } from '../codeceptjsTypes'
 import { createMissedId } from './createMissedId'
 
 const { dispatcher, hook, step, test, suite, all } = event
 
-export const testDataAggregator = <T extends BasePlugin> (store: T): T => {
+export const registerPlugin = <T extends BasePlugin> (store: T): T => {
   dispatcher.on(hook.started, () => {
     store.startedHook()
   })

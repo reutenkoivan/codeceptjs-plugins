@@ -1,6 +1,6 @@
 import path from 'path'
 import { container } from 'codeceptjs'
-import { testDataAggregator, Logger } from '@codeceptjs-plugins/base'
+import { registerPlugin, Logger } from '@codeceptjs-plugins/base'
 
 import { HTMLSnapshotOnFail } from './htmlSnapshotOnFail'
 import { getDriver } from './utils/getDriver'
@@ -12,12 +12,13 @@ const defaultConfig = {
   dirname: 'html-snapshots-on-fail',
   rootDir: global.output_dir,
   uniqNames: false,
-  wrightFile: true,
+  writeFile: true,
+  reporter: undefined,
 }
 
 const pack = require('../package.json')
 
-module.exports = (userSettings: HTMLOnFailPlugin.userSettings): void => {
+module.exports = (userSettings: HTMLOnFailPlugin.userSettings): HTMLSnapshotOnFail => {
   Logger.version(namespace, pack.version)
 
   const baseSettings = Object.assign(defaultConfig, userSettings)
@@ -33,8 +34,8 @@ module.exports = (userSettings: HTMLOnFailPlugin.userSettings): void => {
     return
   }
 
-  testDataAggregator(new HTMLSnapshotOnFail(config, {
+  return registerPlugin(new HTMLSnapshotOnFail(config, {
     driver,
-    reporter: container.plugins('allure'),
+    reporter: container.plugins(baseSettings.reporter),
   }))
 }
