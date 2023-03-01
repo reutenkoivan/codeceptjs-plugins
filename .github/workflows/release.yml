@@ -57,8 +57,8 @@ jobs:
 
       - name: Build documentation
         env:
-          BASE_URL: '/docusaurus-tde/'
-        run: yarn build:docs
+          BASE_URL: '/codeceptjs-plugins/'
+        run: yarn docs:build
 
       - name: Deploy into github pages
         uses: peaceiris/actions-gh-pages@v3
