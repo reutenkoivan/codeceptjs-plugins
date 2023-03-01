@@ -1,16 +1,16 @@
 /* eslint-disable no-console */
 
 import chalk from 'chalk'
-import { output } from 'codeceptjs'
-import { LoggerOptions, LoggerProcessor } from './types'
+import { LoggerOptions, LoggerProcessorContract } from './types'
+import { defaultLoggerProcessor } from './defaultLoggerProcessor'
 
 export class Logger {
   protected readonly namespace: string
-  protected readonly loggerProcessor: LoggerProcessor
+  protected readonly loggerProcessor: LoggerProcessorContract
 
   constructor({ namespace, loggerProcessor }: LoggerOptions) {
     this.namespace = namespace
-    this.loggerProcessor = loggerProcessor || output
+    this.loggerProcessor = loggerProcessor || defaultLoggerProcessor
   }
 
   static version(namespace: string, version: string): void {
@@ -41,13 +41,13 @@ export class Logger {
 
   debug(msg: string, data?: any): void {
     for (const row of this.format(msg, data)) {
-      this.loggerProcessor.plugin(this.namespace, row)
+      this.loggerProcessor.debug(this.namespace, row)
     }
   }
 
   say(msg: string, data?: any): void {
     for (const row of this.format(msg, data)) {
-      this.loggerProcessor.say(`[ ${this.namespace} ] ${row}`, 'magenta')
+      this.loggerProcessor.info(`[ ${this.namespace} ] ${row}`, 'magenta')
     }
   }
 

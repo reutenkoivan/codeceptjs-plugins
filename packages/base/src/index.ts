@@ -3,3 +3,5 @@ export * from './registerPlugin'
 export * from './logger'
 
 export * from './codeceptjsTypes'
+
+export * from './types'
