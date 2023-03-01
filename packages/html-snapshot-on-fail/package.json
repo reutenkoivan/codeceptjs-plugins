@@ -1,6 +1,7 @@
 {
   "name": "@codeceptjs-plugins/html-snapshot-on-fail",
   "version": "0.0.3",
+  "description": "CodeceptJS plugin for taking HTML snapshots on test fail",
   "license": "MIT",
   "author": "Ivan Reutenko",
   "files": [

@@ -14,7 +14,7 @@
     "chalk": ">=4.1.1",
     "codeceptjs": ">=3.0.5"
   },
-  "homepage": "https://reutenkoivan.github.io/codeceptjs-plugins/",
+  "homepage": "https://reutenkoivan.github.io/codeceptjs-plugins",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/reutenkoivan/codeceptjs-plugins.git"
