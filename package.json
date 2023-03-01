@@ -16,11 +16,16 @@
     "watch": "yarn references && tsc -b ./tsconfig.solution.json --watch",
     "lint": "TIMING=1 eslint . --ext .js,.ts,.tsx,.jsx --report-unused-disable-directives",
     "format": "eslint . --ext .js,.ts,.tsx,.jsx --fix",
-    "build:docs": "yarn docusaurus-tde build"
+    "docs:build": "yarn docusaurus-tde build",
+    "docs:start": "yarn docusaurus-tde start"
   },
   "devDependencies": {
     "@docusaurus-tde/cli": "^0.0.5",
+    "@docusaurus-tde/components-theme": "^0.0.5",
+    "@docusaurus-tde/custom-css-hook": "^0.0.5",
+    "@docusaurus-tde/debug-hook": "^0.0.5",
     "@docusaurus-tde/package-documentation-hook": "^0.0.5",
+    "@docusaurus-tde/react-pages-hook": "^0.0.5",
     "@tinkoff-monorepo/fix-ts-references": "^1.8.4",
     "@types/node": "^14.17.34",
     "@typescript-eslint/eslint-plugin": "^5.9.0",

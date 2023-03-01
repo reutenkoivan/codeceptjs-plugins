@@ -4,8 +4,34 @@ sidebar_label: Details
 slug: /
 ---
 
-Plugin for CodeceptJS that makes a snapshot of the entire html tree and saves it to a file with the html extension.
+
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+:::info TL;DR
+Plugin that makes a snapshot of the entire html tree and saves it to a file with the html extension.
 The artifact is saved in the default output directory, or if the output directory is specified then in the specified directory.
+:::
+
+## Installation
+<Tabs groupId="package-manager">
+<TabItem value="npm">
+
+```shell
+npm add -D @codeceptjs-plugins/html-snapshot-on-fail
+```
+
+</TabItem>
+<TabItem value="yarn">
+
+```shell
+yarn add -D @codeceptjs-plugins/html-snapshot-on-fail
+```
+
+</TabItem>
+</Tabs>
 
 Why do you need it? When the test fails, the html snapshot is saved, which allows you to see the entire html structure at the time of the crash and analyze:
 

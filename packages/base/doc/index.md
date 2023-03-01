@@ -1,20 +1,37 @@
-# [@codeceptjs-plugins/base](https://reutenkoivan.github.io/codeceptjs-plugins/base)
+---
+sidebar_position: 1
+slug: /
+title: "@codeceptjs-plugins/base"
+sidebar_label: Details
+---
 
-![npm](https://img.shields.io/npm/v/@codeceptjs-plugins/base)
-![license](https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?colorB=ff0000)
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
 
-This is a base plugin for CodeceptJS plugins. It provides a plugin entity as class instead of a function, which is more convenient to use.
+:::info TL;DR
+Provides a plugin entity as class instead of a function, which is more convenient to use.
 It also provides a plugin register which automatically subscribes to CodeceptJS events and calls plugin methods.
+:::
 
 ## Installation
+<Tabs groupId="package-manager">
+<TabItem value="npm">
 
-```bash
-npm i --save-dev @codeceptjs-plugins/base
+```shell
+npm add -D @codeceptjs-plugins/base
 ```
 
-```bash
-yarn add --dev @codeceptjs-plugins/base
+</TabItem>
+<TabItem value="yarn">
+
+```shell
+yarn add -D @codeceptjs-plugins/base
 ```
+
+</TabItem>
+</Tabs>
 
 ## Basic usage
 

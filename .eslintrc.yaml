@@ -2,6 +2,7 @@ ignorePatterns:
   - 'lib'
   - 'node_modules'
   - 'public'
+  - 'docs/react-pages'
 extends:
   - 'eslint:recommended'
   - 'plugin:import/typescript'
@@ -147,5 +148,4 @@ overrides:
   - files:
     - './packages/**/types.ts'
     rules:
-      # https://github.com/import-js/eslint-plugin-import#readme
       no-unused-vars: 'off'
