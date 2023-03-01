@@ -51,11 +51,15 @@ class CustomPlugin extends BasePlugin {
 
 // 2. Register a plugin
 module.exports = (userSettings: Record<string, any>): CustomPlugin  => {
-  const pluginInstanse = registerPlugin(new CustomPlugin())
+  const pluginInstanse = registerPlugin(new CustomPlugin(userSettings))
 
   return pluginInstanse
 }
 ```
+
+:::tip
+[Available methods](https://github.com/reutenkoivan/codeceptjs-plugins/blob/main/packages/base/src/basePlugin.ts)
+:::
 
 ## Configure custom logger processor
 

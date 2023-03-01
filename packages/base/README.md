@@ -34,7 +34,7 @@ class CustomPlugin extends BasePlugin {
 
 // 2. Register a plugin
 module.exports = (userSettings: Record<string, any>): CustomPlugin  => {
-  const pluginInstanse = registerPlugin(new CustomPlugin())
+  const pluginInstanse = registerPlugin(new CustomPlugin(userSettings))
 
   return pluginInstanse
 }
