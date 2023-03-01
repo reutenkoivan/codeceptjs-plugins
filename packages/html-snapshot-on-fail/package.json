@@ -1,6 +1,6 @@
 {
   "name": "@codeceptjs-plugins/html-snapshot-on-fail",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "author": "Ivan Reutenko",
   "files": [
@@ -9,7 +9,7 @@
   ],
   "main": "lib/index",
   "dependencies": {
-    "@codeceptjs-plugins/base": "0.0.2",
+    "@codeceptjs-plugins/base": "0.0.3",
     "humanize-hash-long-str": "^1.4.0"
   },
   "peerDependencies": {
