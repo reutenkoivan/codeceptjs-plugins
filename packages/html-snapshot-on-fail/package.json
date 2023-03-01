@@ -1,6 +1,6 @@
 {
   "name": "@codeceptjs-plugins/html-snapshot-on-fail",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "CodeceptJS plugin for taking HTML snapshots on test fail",
   "license": "MIT",
   "author": "Ivan Reutenko",
@@ -10,7 +10,7 @@
   ],
   "main": "lib/index",
   "dependencies": {
-    "@codeceptjs-plugins/base": "0.0.3",
+    "@codeceptjs-plugins/base": "0.0.4",
     "humanize-hash-long-str": "^1.4.0"
   },
   "peerDependencies": {
