@@ -1171,6 +1171,17 @@
     node-fetch "^2.6.6"
     signales "^2.0.5"
 
+"@docusaurus-tde/di@0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@docusaurus-tde/di/-/di-0.0.6.tgz#102400721fe6e5a70f37a20a779d11ba4b9b2a83"
+  integrity sha512-P2qxF2q8agZsQmAda3uja3u+JU0J2BzQQkFrWe4smoCtCILHtx55B2s9aqJ8xqRNt3l9j6/NwTLmjlBuAOmmlA==
+  dependencies:
+    "@docusaurus-tde/utils" "0.0.6"
+    glob "^7.2.0"
+    lodash "^4.17.21"
+    node-fetch "^2.6.6"
+    signales "^2.0.5"
+
 "@docusaurus-tde/package-documentation-hook@^0.0.5":
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/@docusaurus-tde/package-documentation-hook/-/package-documentation-hook-0.0.5.tgz#e7eb55642b832d58f9eb9f900643a97c195d8a0a"
@@ -1187,10 +1198,22 @@
     "@docusaurus-tde/di" "0.0.5"
     "@docusaurus/plugin-content-pages" "2.0.0-beta.18"
 
+"@docusaurus-tde/static-assets-hook@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@docusaurus-tde/static-assets-hook/-/static-assets-hook-0.0.6.tgz#3114e820e357ced59a8d58b50d14f5b787a4d05a"
+  integrity sha512-cxjn1iIodvPCxxJczU7I7K8W6FfuDUtRLRTFVrixOwYkSYekJmUX3y4KHqLaKDPelvrEM0Gn/V26LapiFGXV/w==
+  dependencies:
+    "@docusaurus-tde/di" "0.0.6"
+
 "@docusaurus-tde/utils@0.0.5":
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/@docusaurus-tde/utils/-/utils-0.0.5.tgz#2e91f6212ef59e89ca73ccdd05cdbb0b3f57a496"
   integrity sha512-B270un4NCrNlQd1IoOnpqh2H+bNz8adpfwV+dxyFLxEsAm1OcmBPrEQrpaMd5Sg9d77bF39veMQYzb5P1gfoTw==
+
+"@docusaurus-tde/utils@0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@docusaurus-tde/utils/-/utils-0.0.6.tgz#c1fddde27bac12e82a49cc143db8600a863faa1f"
+  integrity sha512-Te0Ip+ItJv7TpFmXTdgwHyZOjR2WHfJE1PkPDT8wsCp6tGowtVi11b9P0jKFlIOMQKbsMuPpMtopsceJWioIcA==
 
 "@docusaurus-tde/webpack-patcher-plugin@0.0.5":
   version "0.0.5"

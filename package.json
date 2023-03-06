@@ -26,6 +26,7 @@
     "@docusaurus-tde/debug-hook": "^0.0.5",
     "@docusaurus-tde/package-documentation-hook": "^0.0.5",
     "@docusaurus-tde/react-pages-hook": "^0.0.5",
+    "@docusaurus-tde/static-assets-hook": "^0.0.6",
     "@tinkoff-monorepo/fix-ts-references": "^1.8.4",
     "@types/node": "^14.17.34",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
