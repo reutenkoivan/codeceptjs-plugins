@@ -57,39 +57,37 @@ module.exports = (userSettings: Record<string, any>): CustomPlugin  => {
 }
 ```
 
-:::tip
-[Available methods](https://github.com/reutenkoivan/codeceptjs-plugins/blob/main/packages/base/src/basePlugin.ts)
-:::
-
-## Configure custom logger processor
+## Interface
 
 ```typescript
-import fs from 'fs'
-import path from 'path'
-import { LoggerProcessorContract, BasePlugin } from '@codeceptjs-plugins/base'
+interface BasePlugin {
+  logger: Logger
+  config: Record<string, any>
 
-// 1. Create a logger processor class
-const logFileStream = fs.createWriteStream(path.resolve(global.output_dir, 'custom.log'))
-const output = new console.Console(logFileStream, logFileStream)
+  constructor(config: Record<string, any>, options: BasePluginOptionsType)
 
-class CustomLoggerProcessor implements LoggerProcessorContract {
-  info(message: string): void {
-    output.log('info', message)
-  }
-
-  debug(scope: string, message: string): void {
-    output.log('debug', scope, message)
-  }
-
-  error(message: string): void {
-    output.log('error', message)
-  }
-}
-
-// 2. Create a plugin class
-class CustomPlugin extends BasePlugin {
-  constructor(config) {
-    super(config, {namespace: 'my-custom-plugin', loggerProcessor: new CustomLoggerProcessor()})
-  }
+  startedHook(): void | Promise<void>
+  passedHook(): void | Promise<void>
+  beforeStep(step: BaseEvents.step.before): void | Promise<void>
+  afterStep(step: BaseEvents.step.before): void | Promise<void>
+  startedStep(step: BaseEvents.step.before): void | Promise<void>
+  finishedStep(step: BaseEvents.step.after): void | Promise<void>
+  passedStep(step: BaseEvents.step.passed): void | Promise<void>
+  failedStep(step: BaseEvents.step.failed): void | Promise<void>
+  beforeTest(test: BaseEvents.test.before): void | Promise<void>
+  afterTest(test: BaseEvents.test.after): void | Promise<void>
+  startedTest(test: BaseEvents.test.before): void | Promise<void>
+  finishedTest(test: BaseEvents.test.after): void | Promise<void>
+  passedTest(test: BaseEvents.test.after): void | Promise<void>
+  failedTest(
+      test: BaseEvents.test.before | BaseEvents.suite.before,
+      error: BaseEvents.test.error
+  ): void | Promise<void>
+  beforeSuite(suite: BaseEvents.suite.before): void | Promise<void>
+  afterSuite(suite: BaseEvents.suite.after): void | Promise<void>
+  skippedTest(test: BaseEvents.test.after): void | Promise<void>
+  resultAll(): void | Promise<void>
+  beforeAll(): void | Promise<void>
+  afterAll(): void | Promise<void>
 }
 ```

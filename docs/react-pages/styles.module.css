@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 2rem;
+  padding: 1rem 2rem 0 2rem;
 }
 
 .center {
@@ -21,20 +21,16 @@
   justify-self: flex-end;
 }
 
-.cardContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
+.packagesContainer {
   width: 100%;
+  padding: 1rem 2rem;
 }
 
-.card {
-  min-width: 10vw;
-  min-height: 10vh;
+.featuresContainer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 1rem;
-  padding: 1rem;
+  width: 100%;
+  padding: 1rem 2rem;
 }

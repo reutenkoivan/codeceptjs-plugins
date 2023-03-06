@@ -9,7 +9,9 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 // @ts-ignore
 import styles from './styles.module.css'
 
-import { HomepageHeader } from './components/HomepageHeader'
+import {HomepageHeader} from './components/HomepageHeader'
+import {DisplayAvailablePackages} from "./components/Packages";
+import {UsageExample} from "./components/Usage";
 
 export default () => {
   return (
@@ -17,17 +19,11 @@ export default () => {
       <HomepageHeader/>
       <main>
         <div className={styles.mainContainer}>
-          <div className={styles.cardContainer}>
-            <Link to='/base'>
-              <div className={clsx('card shadow--lw', styles.card)}>
-                <h4>Base</h4>
-              </div>
-            </Link>
-            <Link to='/html-snapshot-on-fail'>
-              <div className={clsx('card shadow--lw', styles.card)}>
-                <h4>HTML snapshot on fail</h4>
-              </div>
-            </Link>
+          <div className={styles.packagesContainer}>
+            <DisplayAvailablePackages/>
+          </div>
+          <div className={styles.featuresContainer}>
+            <UsageExample/>
           </div>
         </div>
       </main>
